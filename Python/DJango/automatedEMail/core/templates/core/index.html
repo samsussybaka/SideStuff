@@ -1,0 +1,32 @@
+{% extends 'core/base.html' %}
+
+{% block title %}Fat Ass{% endblock %}
+
+{% block content %}
+  <form method="POST">
+
+    {% csrf_token %}
+    <div class="mb-3">
+      <label for="Subject" name="Subject" class="form-label">Email Subject</label>
+      <input type="text" class="form-control" name="Subject" required_id="Subject" id="exampleInputEmail1" aria-describedby="emailHelp">
+    </div>
+    <div class="mb-3">
+        <label for="exampleInputPassword1" class="form-label">Email body</label>
+        <input type="text" name="body" class="form-control" required_id="body" id="exampleInputPassword1">
+      </div>
+      <div class="mb-3">
+        <label for="exampleInputPassword1" class="form-label">receivers email address</label>
+        <input type="email" name="receiver" class="form-control" required_id="receiver" id="exampleInputPassword1">
+      </div>
+      <div class="mb-3">
+        <label for="exampleInputPassword1" class="form-label">sender email</label>
+        <input type="text" name="sender" class="form-control" required_id="sender" id="exampleInputPassword1">
+      </div>
+    <div class="mb-3">
+      <label for="exampleInputPassword1" class="form-label">sender Password</label>
+      <input type="text" name="password" class="form-control" required_id="password" id="exampleInputPassword1">
+    </div>
+
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+{% endblock %}
